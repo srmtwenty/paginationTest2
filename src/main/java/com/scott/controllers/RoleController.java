@@ -33,7 +33,7 @@ public class RoleController {
     public Role updateRole(@PathVariable Long id, @RequestBody Role role){
         Role updateR=this.findRoleById(id);
         updateR.setName(role.getName());
-        updateR.setPersons(role.getPersons());
+        //updateR.setPersons(role.getPersons());
         return roleRepository.save(updateR);
     }
     @DeleteMapping("/{id}/delete")

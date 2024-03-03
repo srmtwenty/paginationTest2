@@ -45,8 +45,8 @@ public class ArticleController {
         updateA.setName(article.getName());
         updateA.setDescription(article.getDescription());
         updateA.setAddress(article.getAddress());
-        updateA.setPeople(article.getPeople());
-        updateA.setTags(article.getTags());
+        //updateA.setPeople(article.getPeople());
+        //updateA.setTags(article.getTags());
         updateA.setDate(article.getDate());
         return articleRepository.save(updateA);
     }

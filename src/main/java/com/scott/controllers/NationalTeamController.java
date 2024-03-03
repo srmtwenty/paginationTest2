@@ -44,10 +44,10 @@ public class NationalTeamController {
         updateN.setName(nationalTeam.getName());
         updateN.setNation(nationalTeam.getNation());
         updateN.setDescription(nationalTeam.getDescription());
-        updateN.setMembers(nationalTeam.getMembers());
-        updateN.setCompetitions(nationalTeam.getCompetitions());
-        updateN.setNation(nationalTeam.getNation());
-        updateN.setRoutines(nationalTeam.getRoutines());
+        //updateN.setMembers(nationalTeam.getMembers());
+        //updateN.setCompetitions(nationalTeam.getCompetitions());
+        //updateN.setNation(nationalTeam.getNation());
+        //updateN.setRoutines(nationalTeam.getRoutines());
         return nationalTeamRepository.save(updateN);
     }
     @DeleteMapping("/{nationalTeamId}/delete")

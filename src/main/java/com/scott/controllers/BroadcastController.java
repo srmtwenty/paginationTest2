@@ -47,9 +47,9 @@ public class BroadcastController {
         updateB.setName(broadcast.getName());
         updateB.setDate(broadcast.getDate());
         updateB.setDescription(broadcast.getDescription());
-        updateB.setTags(broadcast.getTags());
-        updateB.setUrl(broadcast.getUrl());
-        updateB.setPeople(broadcast.getPeople());
+        //updateB.setTags(broadcast.getTags());
+        //updateB.setUrl(broadcast.getUrl());
+        //updateB.setPeople(broadcast.getPeople());
         return broadcastRepository.save(updateB);
     }
     @DeleteMapping("/{id}")

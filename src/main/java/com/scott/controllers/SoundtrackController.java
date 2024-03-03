@@ -41,7 +41,7 @@ public class SoundtrackController {
         Soundtrack updateS=this.findSoundtrackById(soundtrackId);
         updateS.setName(soundtrack.getName());
         updateS.setDescription(soundtrack.getDescription());
-        updateS.setMusics(soundtrack.getMusics());
+        //updateS.setMusics(soundtrack.getMusics());
         return soundtrackRepository.save(updateS);
     }
     @DeleteMapping("/{soundtrackId}/delete")

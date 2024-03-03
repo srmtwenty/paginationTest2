@@ -37,9 +37,9 @@ public class NationController {
     public Nation updateNation(@PathVariable Long nationId, @RequestBody Nation nation){
         Nation updateN=this.findNationById(nationId);
         updateN.setName(nation.getName());
-        updateN.setPeople(nation.getPeople());
-        updateN.setCompetitions(nation.getCompetitions());
-        updateN.setNationalTeams(nation.getNationalTeams());
+        //updateN.setPeople(nation.getPeople());
+        //updateN.setCompetitions(nation.getCompetitions());
+        //updateN.setNationalTeams(nation.getNationalTeams());
         return nationRepository.save(updateN);
     }
 

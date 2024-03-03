@@ -45,9 +45,9 @@ public class MusicController {
         Music updateM=this.findMusicById(musicId);
         updateM.setName(music.getName());
         updateM.setDescription(music.getDescription());
-        updateM.setSoundtrack(music.getSoundtrack());
-        updateM.setArtists(music.getArtists());
-        updateM.setComposers(music.getComposers());
+        //updateM.setSoundtrack(music.getSoundtrack());
+        //updateM.setArtists(music.getArtists());
+        //updateM.setComposers(music.getComposers());
         return musicRepository.save(updateM);
 
     }

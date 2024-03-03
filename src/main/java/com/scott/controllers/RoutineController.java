@@ -45,11 +45,11 @@ public class RoutineController {
         updateR.setDescription(routine.getDescription());
         updateR.setRank(routine.getRank());
         updateR.setDate(routine.getDate());
-        updateR.setMusics(routine.getMusics());
-        updateR.setCompetition(routine.getCompetition());
-        updateR.setSwimmers(routine.getSwimmers());
-        updateR.setCoaches(routine.getCoaches());
-        updateR.setNationalTeam(routine.getNationalTeam());
+        //updateR.setMusics(routine.getMusics());
+        //updateR.setCompetition(routine.getCompetition());
+        //updateR.setSwimmers(routine.getSwimmers());
+        //updateR.setCoaches(routine.getCoaches());
+        //updateR.setNationalTeam(routine.getNationalTeam());
         return routineRepository.save(updateR);
     }
     @DeleteMapping("/{routineId}/delete")

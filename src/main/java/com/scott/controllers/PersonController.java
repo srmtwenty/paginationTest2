@@ -50,15 +50,16 @@ public class PersonController {
         update.setName(person.getName());
         update.setDescription(person.getDescription());
         update.setGender(person.getGender());
-        update.setRoles(person.getRoles());
-        update.setNationality(person.getNationality());
-        update.setNationalTeams(person.getNationalTeams());
-        update.setRoutines(person.getRoutines());
-        update.setRoutinesForCoaches(person.getRoutinesForCoaches());
+        //update.setRoles(person.getRoles());
+        //update.setNationality(person.getNationality());
+        //update.setNationalTeams(person.getNationalTeams());
+        //update.setRoutines(person.getRoutines());
+        //update.setRoutinesForCoaches(person.getRoutinesForCoaches());
+
         update.setBirth((person.getBirth()));
-        update.setSns_addresses(person.getSns_addresses());
-        update.setArticles(person.getArticles());
-        update.setBroadcasts(person.getBroadcasts());
+        //update.setSns_addresses(person.getSns_addresses());
+        //update.setArticles(person.getArticles());
+        //update.setBroadcasts(person.getBroadcasts());
         return personRepository.save(update);
     }
 
@@ -91,6 +92,12 @@ public class PersonController {
         Person person=personRepository.findById(personId).get();
         return person.getTags();
     }
+    
+    @GetMapping("/{personId}/routines")
+    public Set<Routine> findAllRoutinesForPerson(@PathVariable Long personId){
+        Person person=personRepository.findById(personId).get();
+        return person.getRoutines();
+    }
     @PutMapping("/{personId}/addTag/{tagId}")
     public Person addTag(@PathVariable Long personId, @PathVariable Long tagId){
         Person person=personRepository.findById(personId).get();
@@ -98,6 +105,7 @@ public class PersonController {
         person.addTag(tag);
         return personRepository.save(person);
     }
+
 
     @PutMapping("/{personId}/removeTag/{tagId}")
     public Person removeTag(@PathVariable Long personId, @PathVariable Long tagId){
@@ -182,6 +190,11 @@ public class PersonController {
         return personRepository.save(person);
     }
 
+    @GetMapping("/{personId}/articles")
+    public Set<Article> findArticlesForPerson(@PathVariable Long personId){
+        Person person=personRepository.findById(personId).get();
+        return person.getArticles();
+    }
     @PutMapping("/{personId}/addArticle/{articleId}")
     public Person addArticle(@PathVariable Long personId, @PathVariable Long articleId){
         Person person=personRepository.findById(personId).get();
@@ -201,5 +214,11 @@ public class PersonController {
     @GetMapping("/{offset}/{pageSize}/{field}")
     public Page<Person> findPeoplePaginationAndSorting(@PathVariable int offset, @PathVariable int pageSize, @PathVariable String field){
         return personRepository.findAll(PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
+    }
+
+    @GetMapping("/{personId}/broadcasts")
+    public Set<Broadcast> findBroadcastsForPerson(@PathVariable Long personId){
+        Person person=personRepository.findById(personId).get();
+        return person.getBroadcasts();
     }
 }

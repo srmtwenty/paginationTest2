@@ -30,8 +30,8 @@ public class SNSController {
     public SNS updateSNS(@PathVariable Long id, @RequestBody SNS sns){
         SNS updateS=this.findSNS(id);
         updateS.setName(sns.getName());
-        updateS.setPerson(sns.getPerson());
-        updateS.setMusic(sns.getMusic());
+        //updateS.setPerson(sns.getPerson());
+        //updateS.setMusic(sns.getMusic());
         return snsRepository.save(updateS);
     }
     @DeleteMapping("/{id}/delete")

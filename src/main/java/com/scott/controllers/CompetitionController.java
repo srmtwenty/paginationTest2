@@ -43,11 +43,11 @@ public class CompetitionController {
         Competition updateC=this.findCompetitionById(competitionId);
         updateC.setName(competition.getName());
         updateC.setDescription(competition.getDescription());
-        updateC.setNation(competition.getNation());
-        updateC.setDate(competition.getDate());
+        //updateC.setNation(competition.getNation());
+        //updateC.setDate(competition.getDate());
         updateC.setLocation(competition.getLocation());
-        updateC.setParticipatedTeams(competition.getParticipatedTeams());
-        updateC.setRoutines(competition.getRoutines());
+        //updateC.setParticipatedTeams(competition.getParticipatedTeams());
+        //updateC.setRoutines(competition.getRoutines());
         return competitionRepository.save(updateC);
     }
     @DeleteMapping("/{competitionId}/delete")

@@ -36,8 +36,8 @@ public class TagController {
     public Tag updateTag(@PathVariable Long tagId, @RequestBody Tag tag){
         Tag updateT=this.findTagById(tagId);
         updateT.setName(tag.getName());
-        updateT.setPeople(tag.getPeople());
-        updateT.setArticles(tag.getArticles());
+        //updateT.setPeople(tag.getPeople());
+        //updateT.setArticles(tag.getArticles());
         return tagRepository.save(updateT);
     }
     @DeleteMapping("/{tagId}/delete")
